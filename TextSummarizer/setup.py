@@ -20,6 +20,7 @@ setuptools.setup(
     author_email=AUTHOR_EMAIL,
     description="A small python package for NLP app",
     long_description=long_description,
+    
     long_description_content="text/markdown",
     url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
     project_urls={
