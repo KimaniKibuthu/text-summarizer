@@ -1,5 +1,10 @@
 data_ingestion:
   root_dir: data/data_ingestion
-  source_url: https://github.com/KimaniKibuthu/text-summarizer/raw/main/TextSummarizer/data/corpus.7z
+  source_url: https://github.com/KimaniKibuthu/text-summarizer/raw/main/data/corpus.7z
   local_data_dir: data/data_ingestion/data.7z
   unzip_dir: data/data_ingestion/raw_data
+
+data_validation:
+  root_dir: data/data_validation
+  STATUS_FILE: data/data_validation/status.txt
+  ALL_REQUIRED_FILES: ["train.json", "test.json", "val.json"]

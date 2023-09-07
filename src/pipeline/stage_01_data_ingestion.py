@@ -21,3 +21,4 @@ class DataIngestionTrainingPipeline:
         data_ingestion = DataIngestion(data_ingestion_config)
         data_ingestion.run()
         logger.info("<<<<< stage_01_data_ingestion completed\n")
+
