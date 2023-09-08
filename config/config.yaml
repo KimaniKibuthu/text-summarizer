@@ -8,3 +8,8 @@ data_validation:
   root_dir: data/data_validation
   STATUS_FILE: data/data_validation/status.txt
   ALL_REQUIRED_FILES: ["train.json", "test.json", "val.json"]
+
+data_transformation:
+  root_dir: data/data_transformation
+  data_path: data/data_ingestion/raw_data
+  tokenizer_name: google/pegasus-cnn_dailymail

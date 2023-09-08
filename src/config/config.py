@@ -7,7 +7,7 @@ from constants.constants import CONFIG_PATH, PARAMS_PATH
 from loging import logger
 from utils.common import get_size
 from utils.common import read_yaml
-from entity import DataIngestionConfig, DataValidationConfig
+from entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig
 
 class ConfigurationManager:
     def __init__(
@@ -32,8 +32,16 @@ class ConfigurationManager:
         return data_ingestion_config
 
     def get_data_validation_config(self):
+        
         return DataValidationConfig(
             root_dir = Path(self.config["data_validation"]["root_dir"]),
             STATUS_FILE = self.config["data_validation"]["STATUS_FILE"],
             ALL_REQUIRED_FILES = self.config["data_validation"]["ALL_REQUIRED_FILES"]
         )
+        
+    def  get_data_transformation_config(self):
+        return DataTransformationConfig(
+            root_dir = Path(self.config["data_transformation"]["root_dir"]),
+            data_path = Path(self.config["data_transformation"]["data_path"]),
+            tokenizer_name = self.config["data_transformation"]["tokenizer_name"]
+        )      
