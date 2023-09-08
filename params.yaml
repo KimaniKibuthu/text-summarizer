@@ -1,2 +1,9 @@
-test_params:
-    one: two
+model_params:
+    num_epochs: 1
+    warmup_steps: 500
+    per_device_train_batch_size: 1
+    per_device_eval_batch_size: 1
+    weight_decay: 0.01
+    logging_steps: 10
+    fp16: True
+    learning_rate: 2e-5

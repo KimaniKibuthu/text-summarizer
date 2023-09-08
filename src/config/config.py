@@ -7,7 +7,7 @@ from constants.constants import CONFIG_PATH, PARAMS_PATH
 from loging import logger
 from utils.common import get_size
 from utils.common import read_yaml
-from entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig
+from entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelEvaluationConfig
 
 class ConfigurationManager:
     def __init__(
@@ -44,4 +44,11 @@ class ConfigurationManager:
             root_dir = Path(self.config["data_transformation"]["root_dir"]),
             data_path = Path(self.config["data_transformation"]["data_path"]),
             tokenizer_name = self.config["data_transformation"]["tokenizer_name"]
-        )      
+        ) 
+        
+    def get_model_evaluation_config(self):
+        return ModelEvaluationConfig(
+            root_dir = Path(self.config["model_evaluation"]["root_dir"]),
+            model_path = Path(self.config["model_evaluation"]["model_path"]),
+            tokenizer_name = self.config["model_evaluation"]["tokenizer_name"]
+        )  

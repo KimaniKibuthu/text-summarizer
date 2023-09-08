@@ -38,3 +38,6 @@ try:
 except Exception as e:
     logger.error(e)
     raise e
+
+logger.info(">>> model trained and saved successfully")
+

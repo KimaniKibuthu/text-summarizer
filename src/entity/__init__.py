@@ -19,3 +19,11 @@ class DataTransformationConfig:
     root_dir: Path
     data_path: Path
     tokenizer_name: str
+
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    data_dir: Path
+    model_path: Path
+    tokenizer_path: Path
+    

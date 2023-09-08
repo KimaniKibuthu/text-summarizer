@@ -13,3 +13,14 @@ data_transformation:
   root_dir: data/data_transformation
   data_path: data/data_ingestion/raw_data
   tokenizer_name: google/pegasus-cnn_dailymail
+
+model_training:
+  root_dir: models/model_training
+  data_dir: data/data_ingestion/raw_data/transformers_format_data
+  model_ckpt: google/pegasus-cnn_dailymail
+
+model_evaluation:
+  root_dir: models/model_evaluation
+  data_dir: data/data_ingestion/raw_data/transformers_format_data
+  model_path: models/model_training/model
+  tokenizer_path: models/model_training/tokenizer
