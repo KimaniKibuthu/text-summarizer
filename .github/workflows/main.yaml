@@ -84,7 +84,7 @@ jobs:
       
       - name: Pull latest images
         run: |
-         docker pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
+         docker pull 137577058790.dkr.ecr.eu-central-1.amazonaws.com/text-summarization-container:latest
          
       - name: Stop and remove container if running
         run: |
