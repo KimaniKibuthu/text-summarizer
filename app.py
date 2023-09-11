@@ -1,14 +1,13 @@
-from fastapi import FastAPI
-import uvicorn
+
 import sys
 from pathlib import Path
 
 sys.path.append(str(Path(__file__).parent.parent))
 
 import os
-from fastapi.template import Jinja2Templates
-from starlette.requests import RedirectResponse
-from fastapi.responses import Response
+from fastapi import FastAPI
+import uvicorn
+from fastapi.responses import Response, RedirectResponse
 from src.pipeline.prediction import PredictionPipeline
 
 
@@ -27,14 +26,14 @@ async def training():
         return Response(content=str(e), status_code=500)
 
 @app.post("/predict", tags=["prediction"])
-async def prediction():
+async def prediction(text):
     try:
         prediction_pipeline = PredictionPipeline()
-        prediction_pipeline.main()
-        return Response(content="Prediction completed successfully", status_code=200)
+        summary = prediction_pipeline.predict(text)
+        return Response(content=summary, status_code=200)
     except Exception as e:
         return Response(content=str(e), status_code=500)
 
 if __name__ == "__main__":
     
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8080, reload=True)

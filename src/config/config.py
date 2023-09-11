@@ -49,6 +49,7 @@ class ConfigurationManager:
     def get_model_evaluation_config(self):
         return ModelEvaluationConfig(
             root_dir = Path(self.config["model_evaluation"]["root_dir"]),
+            data_dir= Path(self.config["model_evaluation"]["data_dir"]),
             model_path = Path(self.config["model_evaluation"]["model_path"]),
-            tokenizer_name = self.config["model_evaluation"]["tokenizer_name"]
+            tokenizer_path=self.config["model_evaluation"]["tokenizer_path"]
         )  

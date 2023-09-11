@@ -22,5 +22,5 @@ model_training:
 model_evaluation:
   root_dir: models/model_evaluation
   data_dir: data/data_ingestion/raw_data/transformers_format_data
-  model_path: models/model_training/model
-  tokenizer_path: models/model_training/tokenizer
+  model_path: models/model_training/model/pegasus-summarization-model
+  tokenizer_path: models/model_training/tokenizer/tokenizer
